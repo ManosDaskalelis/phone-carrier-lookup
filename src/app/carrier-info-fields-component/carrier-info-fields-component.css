@@ -12,13 +12,28 @@
     font-family: "Gill Sans", sans-serif;
 }
 
+.phone-input-group{
+    display: flex;
+    align-items: center;
+}
+
+.country-code{
+    height: 3.7rem;
+    font-size: 16px;
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: white;
+}
+
 .phone-input{
-    width: 20rem;
     height: 3rem;
     font-size: 16px;
     padding: 5px 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
+    background-color: white;
+    width: 20rem;
 }
 
 .carrier-button{
@@ -31,4 +46,4 @@
     border-radius: 4px;
     cursor: pointer;
     margin-top: 1rem;
-}
+}   

@@ -6,11 +6,12 @@ import carriers from '../../shared/carrierinfo.json';
   providedIn: 'root'
 })
 export class CarrierService {
-  private carrierSubject= new BehaviorSubject<string>('Unknown');
+  private carrierSubject = new BehaviorSubject<string>('Unknown');
   carrier$ = this.carrierSubject.asObservable();
 
+
   getCarrierInfo(phoneNumber: string) {
-    const carrier = carriers.carriers.find(cp => cp.phone.substring(0, 3) === phoneNumber.substring(0, 3));
+    const carrier = carriers.carriers.find(cp => cp.phone.substring(0, 6) === phoneNumber.substring(0, 6));
 
     if (carrier) {
       this.carrierSubject.next(carrier.name);
@@ -18,5 +19,12 @@ export class CarrierService {
     }
     this.carrierSubject.next('Unknown');
     return 'Unknown';
+  }
+
+  getCarrierCodeNumber(phoneNumber: string) {
+    const carrier = carriers.carriers.find(cn => cn.code == phoneNumber.substring(0, 3));
+    console.log(phoneNumber);
+
+    return carrier ? carrier.codeNum : 'Unknown';
   }
 }

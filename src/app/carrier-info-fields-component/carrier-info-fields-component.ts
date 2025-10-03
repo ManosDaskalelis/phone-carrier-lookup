@@ -11,11 +11,13 @@ import { FormsModule } from '@angular/forms';
 export class CarrierInfoFieldsComponent {
   private carrierService = inject(CarrierService);
   phone: string = '';
+  countryCode: string = '';
 
   carrierLookup() {
-    console.log(this.phone);
-    const carrierInfo = this.carrierService.getCarrierInfo(this.phone);
-    console.log(carrierInfo);
+    const code = this.carrierService.getCarrierCodeNumber(this.countryCode);
+    const fullnumber = "+"+code+this.phone;
+    const carrierInfo = this.carrierService.getCarrierInfo(fullnumber);
+    console.log(fullnumber);
     return carrierInfo;
   }
 }
