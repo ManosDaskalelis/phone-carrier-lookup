@@ -11,10 +11,12 @@ import { pipe } from 'rxjs';
 export class CarrierInfoDetailsComponent implements OnInit {
   private carrierService = inject(CarrierService);
   carrierName: string ="";
+  carrierAddress: string ="";
   
   ngOnInit(): void {
-    this.carrierService.carrier$.subscribe(pipe(name => {
-      this.carrierName = name;
+    this.carrierService.carrier$.subscribe(pipe(c => {
+      this.carrierName = c.name;
+      this.carrierAddress = c.address;
     }));
   }
 }
