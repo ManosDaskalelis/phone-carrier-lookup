@@ -1,6 +1,6 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { CarrierService } from '../shared/services/carrier-service';
-import { pipe } from 'rxjs';
+import { pipe, tap } from 'rxjs';
 
 @Component({
   selector: 'app-carrier-info-details-component',
@@ -10,13 +10,15 @@ import { pipe } from 'rxjs';
 })
 export class CarrierInfoDetailsComponent implements OnInit {
   private carrierService = inject(CarrierService);
-  carrierName: string ="";
-  carrierAddress: string ="";
-  
+  carrierName: string = "";
+  carrierAddress: string = "";
+
   ngOnInit(): void {
-    this.carrierService.carrier$.subscribe(pipe(c => {
-      this.carrierName = c.name;
-      this.carrierAddress = c.address;
-    }));
+    this.carrierService.carrier$.pipe(
+      tap(c => {
+        this.carrierName = c.name;
+        this.carrierAddress = c.address;
+      })
+    ).subscribe();
   }
 }

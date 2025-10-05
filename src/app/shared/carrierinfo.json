@@ -6,6 +6,21 @@
         "codeNum": "30",
         "phone": "+306978165984",
         "address": "Athens Greece"
+        },
+        {
+        "name": "Cosmote",
+        "code": "CY",
+        "codeNum": "30",
+        "phone": "+306978165984",
+        "address": "Athens Greece"
+        },
+        {
+        "name": "Cosmote",
+        "code": "POl",
+        "codeNum": "30",
+        "phone": "+306978165984",
+        "address": "Athens Greece"
         }
     ]
+    
 }
