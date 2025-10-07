@@ -1,32 +1,37 @@
-.field{
+.field {
     display: flex;
     flex-direction: column;
     margin-bottom: 1rem;
     justify-content: center;
 }
 
-.phone-label{
+.phone-label {
     font-size: 1.3rem;
     font-weight: 600;
     margin-bottom: 3%;
     font-family: "Gill Sans", sans-serif;
 }
 
-.phone-input-group{
+.phone-input-group {
     display: flex;
     align-items: center;
 }
 
-.country-code{
+.country-code {
+    position: relative;
     height: 3.7rem;
     font-size: 16px;
     padding: 5px 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
     background-color: white;
+    border-right: none white;
+    border-top-right-radius: 0%;
+    border-bottom-right-radius: 0%;
+    left: 0.1rem;
 }
 
-.phone-input{
+.phone-input {
     height: 3rem;
     font-size: 16px;
     padding: 5px 10px;
@@ -34,9 +39,11 @@
     border-radius: 4px;
     background-color: white;
     width: 20rem;
+    border-top-left-radius: 0%;
+    border-bottom-left-radius: 0%;
 }
 
-.carrier-button{
+.carrier-button {
     width: 8rem;
     height: 3rem;
     font-size: 16px;
@@ -46,4 +53,8 @@
     border-radius: 4px;
     cursor: pointer;
     margin-top: 1rem;
-}   
+}
+
+.carrier-button:hover {
+    background-color: #3c723f;
+}

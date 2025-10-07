@@ -1,6 +1,7 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, EventEmitter, inject, OnInit, output, signal } from '@angular/core';
 import { CarrierService } from '../shared/services/carrier-service';
-import { pipe, tap } from 'rxjs';
+import { tap } from 'rxjs';
+import { Carrier } from '../shared/model/carrier.model';
 
 @Component({
   selector: 'app-carrier-info-details-component',
@@ -10,6 +11,7 @@ import { pipe, tap } from 'rxjs';
 })
 export class CarrierInfoDetailsComponent implements OnInit {
   private carrierService = inject(CarrierService);
+  private carrier = signal<Carrier | null>(null);
   carrierName: string = "";
   carrierAddress: string = "";
 
@@ -21,4 +23,9 @@ export class CarrierInfoDetailsComponent implements OnInit {
       })
     ).subscribe();
   }
+
+  getCarrierDetails() {
+    
+  }
+
 }

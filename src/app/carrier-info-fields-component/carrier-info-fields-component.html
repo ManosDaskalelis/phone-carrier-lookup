@@ -4,9 +4,11 @@
         <div class="phone-input-group">
             <select class="country-code" name="country-code" id="country-code" [(ngModel)]="countryCode">
                 <option value="GR">GR</option>
+                <option value="CY">CY</option>
+                <option value="POl">POl</option>
             </select>
             <input class="phone-input" type="text" name="phone-number" id="phone-number" [(ngModel)]="phone"/>
         </div>
-        <button class="carrier-button" (click)="carrierLookup()">Click ME</button>
+        <button class="carrier-button" (click)="carrierLookup()">Search</button>
     </div>
 </div>

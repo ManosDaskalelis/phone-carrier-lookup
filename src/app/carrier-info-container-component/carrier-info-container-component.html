@@ -2,6 +2,8 @@
 <div class="main-container">
     <div class="container">
         <app-carrier-info-fields-component />
-        <app-carrier-info-details-component/>
+        @if (carrierInfo$ | async; as carrier) {
+        <app-carrier-info-details-component />
+        }
     </div>
 </div>
